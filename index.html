@@ -187,18 +187,15 @@
 
         // Exibe o modal ao carregar a página
         modal.style.display = "block";
-        document.body.style.overflow = "hidden"; // Bloqueia rolagem da página
 
         acceptBtn.onclick = function(event) {
             event.preventDefault(); // Impede o comportamento padrão do link
             modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Permite rolagem quando o modal está fechado
             window.location.href = this.href; // Redireciona para o link do botão Accept
         }
 
         document.querySelector(".close").onclick = function() {
             modal.style.display = "none";
-            document.body.style.overflow = "auto"; // Permite rolagem quando o modal está fechado
         }
 
         // Lidar com os links dentro do modal
@@ -206,7 +203,6 @@
             link.onclick = function(event) {
                 event.preventDefault(); // Impede o comportamento padrão do link
                 modal.style.display = "none";
-                document.body.style.overflow = "auto"; // Permite rolagem quando o modal está fechado
                 window.location.href = this.href; // Redireciona para o link clicado dentro do modal
             }
         });
