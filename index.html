@@ -111,9 +111,10 @@
         }
 
         @media (max-width: 767.98px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
+        .modal-content {
+            top: 70%; /* Posiciona mais abaixo na versão mobile */
+            transform: translateY(-70%); /* Ajusta para o centro vertical */
+        }
         }
     </style>
 </head>
