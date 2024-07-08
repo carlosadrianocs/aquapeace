@@ -190,19 +190,17 @@
 
         acceptBtn.onclick = function(event) {
             event.preventDefault(); // Impede o comportamento padrão do link
-            modal.style.display = "none";
             window.location.href = this.href; // Redireciona para o link do botão Accept
         }
 
         document.querySelector(".close").onclick = function() {
-            modal.style.display = "none";
+            window.location.href = this.href; // Redireciona para o link do botão Close
         }
 
         // Lidar com os links dentro do modal
         modalLinks.forEach(function(link) {
             link.onclick = function(event) {
                 event.preventDefault(); // Impede o comportamento padrão do link
-                modal.style.display = "none";
                 window.location.href = this.href; // Redireciona para o link clicado dentro do modal
             }
         });
