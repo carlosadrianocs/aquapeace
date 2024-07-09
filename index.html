@@ -193,6 +193,8 @@
 
         // Exibe o modal ao carregar a página
         modal.style.display = "block";
+         // Exibe o modal ao carregar a página e adiciona a classe para desabilitar a rolagem
+        document.body.classList.add("no-scroll");
 
         acceptBtn.onclick = function(event) {
             event.preventDefault(); // Impede o comportamento padrão do link
